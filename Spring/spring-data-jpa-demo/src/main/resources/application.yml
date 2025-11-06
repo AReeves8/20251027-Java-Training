@@ -1,0 +1,21 @@
+spring:
+    datasource:
+
+        # postgresql example:
+        # url: jdbc:postgresql://localhost:5432/<DB-NAME>     # example postgresql connection string
+        # username: postgresql                                # whatever username used in your postgresql connection
+        # password: password                                  # whatever password used in your postgresql connection
+
+        url: jdbc:h2:mem:moviesdb           # name your db - if you want persistence: jdbc:h2:file:[file-path]
+        username: sa                        # default username for h2
+        password:                           # optional for h2
+        driver-class-name: org.h2.Driver    # JDBC connection driver
+
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect      # tells JPA to use H2
+        defer-datasource-initialization: true                   # tells JPA to wait until hibernate is initialized before loading H2 data
+
+    # turns on colors in VS code terminal
+    output:
+        ansi:
+            enabled: always
