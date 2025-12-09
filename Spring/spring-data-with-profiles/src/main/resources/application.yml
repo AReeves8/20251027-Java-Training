@@ -1,0 +1,31 @@
+
+# plain application.properties/.yml will run for ALL profiles
+
+
+# good for shared resources/properties
+spring:
+    output:
+        ansi:
+            enabled: always
+
+    # alternative to settings args
+    # profiles:
+    #     active:
+    #         - dev
+    #         - test
+
+# also good for setting default values that can be overridden in profile specific .properties/.yml
+server:
+    port: 8282  # override in dev.yml BUT NOT in prod.yml
+
+
+
+# you can define custom properties! - likely to see warnings on these but its ok!
+feature:
+    flag:
+        findByRating: true
+
+frontend:
+    url: ${FRONTEND_URL}
+
+
